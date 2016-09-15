@@ -6,6 +6,7 @@ public class Poi {
 	private int y;
 	private int type;
 	private String description;
+	
 	public int getX() {
 		return x;
 	}

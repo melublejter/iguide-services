@@ -11,10 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 public class PlantaController {
 
-	@RequestMapping("/plant")	
+	@RequestMapping("/plant")
 	public Planta getPlantaByBeaconId(@RequestParam("beacon_id") long id){
+		
 		Planta planta = new Planta();
-		planta.setName("Medrano");
+		planta.setName("Bulnes");
 		planta.setAzimuth(100.0);
 		planta.setX(30);
 		planta.setY(50);
@@ -39,5 +40,10 @@ public class PlantaController {
 		planta.addPoi(elevator);
 		
 		return planta;
+	}
+	
+	@RequestMapping("/plantStep")
+	public Planta getPlantaForStepLength(@RequestParam("step_length") int stepLength){
+		return this.getPlantaByBeaconId(123);
 	}
 }
